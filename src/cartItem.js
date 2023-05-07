@@ -1,28 +1,28 @@
 import React from 'react';
 
 class CartItem extends React.Component {
-   
 
-    increaseQuantity = () => {
-        this.setState((prevState) => {
-            return {
-                qty: prevState.qty + 1
-            }
-        })
-    }
-    decreaseQuantity = () => {
-        if (this.state.qty == 0) {
-            return;
-        }
-        this.setState((prevState) => {
-            return {
-                qty: prevState.qty - 1
-            }
-        })
-    }
+
+    // increaseQuantity = () => {
+    //     this.setState((prevState) => {
+    //         return {
+    //             qty: prevState.qty + 1
+    //         }
+    //     })
+    // }
+    // decreaseQuantity = () => {
+    //     if (this.state.qty == 0) {
+    //         return;
+    //     }
+    //     this.setState((prevState) => {
+    //         return {
+    //             qty: prevState.qty - 1
+    //         }
+    //     })
+    // }
     render() {
         // console.log('**', this.props)
-        const { price, qty, title } = this.props.product ;
+        const { price, qty, title } = this.props.product;
         return (
             <div className='cart-item'>
                 <div className='left-block'>
@@ -38,13 +38,13 @@ class CartItem extends React.Component {
                             alt='increase'
                             className='action-icons'
                             src='https://cdn-icons-png.flaticon.com/512/5392/5392715.png'
-                            onClick={this.increaseQuantity}
+                            onClick={() => this.props.onIncreaseQuantity(this.props.product)}
                         />
                         <img
                             alt='decrease'
                             className='action-icons'
                             src='https://cdn-icons-png.flaticon.com/512/992/992683.png'
-                            onClick={this.decreaseQuantity}
+                            onClick={() => this.props.onDecreaseQuantity(this.props.product)}
                         />
                         <img
                             alt='delete'
