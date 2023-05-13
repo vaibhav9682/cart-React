@@ -45,7 +45,7 @@ const CartItem = (props) => {
 
 }
 
-const styles = {
+const styles = {    
     image: {
         height: 110,
         width: 110,
