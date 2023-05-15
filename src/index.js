@@ -7,6 +7,7 @@ import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
 import {initializeApp} from "firebase/app";
+import { getFirestore } from 'firebase/firestore';
 
 
 const firebaseConfig = {
@@ -20,6 +21,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,4 +30,4 @@ root.render(
   </React.StrictMode>
 );
 
-
+export default db;
